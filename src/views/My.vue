@@ -1,6 +1,6 @@
 <template>
   <div class="my">
-    <div class="banner">
+    <div class="banner" @click.prevent="">
       <i class="iconfont icon-back1" @click="goBack"></i>
       <img src="../assets/image/gravatar.png" class="gravatar">
     </div>
@@ -47,17 +47,7 @@ export default {
 
 <style lang="stylus" scoped>
 .my
-  @media all
-    min-height 620px
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)
-    min-height 568px
-  @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2)
-    min-height 667px
-  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
-    min-height 812px
-  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3)
-    min-height 736px
-
+  min-height 100vh
 .banner
   position relative
   display flex
