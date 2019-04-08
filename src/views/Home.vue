@@ -82,7 +82,6 @@
 
 // 点击月份，如果该月份没有日记则跳到 add 页面
 
-
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
@@ -125,7 +124,6 @@ export default {
   },
   methods: {
     add () {
-      // console.log('clicked')
       let num = parseFloat(this.progress.width)
       num += 3.22
       this.progress.width = `${num}%`
@@ -138,11 +136,8 @@ export default {
       let year = this.date.getFullYear()
       let month = parseInt(image.month)
       let days = this.getDaysInOneMonth(year, month)
-
       let writeDays = this.getWriteDays(image)
-
       let radio = this.fixNum( ( (writeDays / days) * 100 ), 2 )
-
       return { width: `${radio}%` }
     },
     getWriteDays (image) {
@@ -151,10 +146,8 @@ export default {
       let days = this.getDaysInOneMonth(year, month)
 
       let diaries = this.storage.load()
-      // console.log('month', month)
       let afterYear = this.filterDataByYear(diaries, year)
       let afterMonth = this.filterDataByMonth(afterYear, month)
-      // console.log('afterMonth', afterMonth)
       let count = 0
       for (let i = 1; i <= days; i++) {
         let oneDayDiaries = this.filterDataByDay(afterMonth, i)
@@ -162,7 +155,6 @@ export default {
           count += 1
         }
       }
-      // console.log('count', count)
       return count
     },
     getDaysInOneMonth (year, month) {
@@ -191,10 +183,7 @@ export default {
       })
     },
     goToMonth (image) {
-
       let writeDays = this.getWriteDays(image)
-      console.log('writeDays111', writeDays)
-
       if (writeDays === 0) {
         this.store.set('addFrom', 'home')
         this.showToast('该月暂无日记')
@@ -216,7 +205,6 @@ export default {
     },
     goToDate () {
       this.store.set('date', this.date)
-      // console.log('date', this.store.get('date'))
       this.$router.push({
         name: 'date'
       })
@@ -249,7 +237,6 @@ export default {
       this.datePicker.show()
     },
     selectHandle (date, selectedVal, selectedText) {
-      // console.log('date', date)
       this.date = date
     },
     initDate () {
@@ -278,17 +265,8 @@ export default {
 
 <style lang="stylus" scoped>
 .home
-  @media all
-    min-height 620px
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)
-    min-height 568px
-  @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2)
-    min-height 667px
-  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
-    min-height 812px
-  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3)
-    min-height 736px
-
+  // min-height 100vh
+  min-height 100vh
 .header
   display flex
   height 1rem

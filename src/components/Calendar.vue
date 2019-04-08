@@ -339,9 +339,8 @@ export default {
 
 <style lang="stylus" scoped>
 .calendar
-  height 8rem
+  // height 8rem
   width 100%
-  margin 0 auto
   background-color #fff
   box-shadow 0 5px 20px 0 rgba(186,186,186,0.30)
   border-radius 16px
@@ -354,8 +353,6 @@ export default {
       font-size 26px
       margin-top .45rem
       color #2D2D2D
-    // align-items center
-    // background-color #eee
   .main
     display flex
     flex-wrap wrap

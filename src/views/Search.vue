@@ -14,26 +14,7 @@
     ></cube-input>
 
     <div class="card-wrapper">
-
-      <!-- <div class="card" @click="goToDetail">
-
-        <div class="left">
-          <span class="left-month">26</span>
-          <span class="left-day">周三</span>
-          <i class="iconfont icon-yun"></i>
-        </div>
-
-        <div class="right">
-          <p class="quote">“</p>
-          <div class="diary">
-            旅行会改变人的气质，让人的目光变得更加长远。在旅途中，你会看到不同的人有不同的习惯，你才能了解到，并不是每个人都按照你的生活方式在生活。这样，人的心胸才会变得更加...这样，人的心胸才会变得更加...这样，人的心胸才会变得更加...这样，人的心胸才会变得更加...这样，人的心胸才会变得更加...
-          </div>
-        </div>
-
-      </div> -->
-
       <div class="card" v-for="(diary, index) in diaries" :key="index" @click="goToDetail(diary)">
-
         <div class="left">
           <span class="left-date">{{ toFix(diary.date[2]) }}</span>
           <span class="left-day">{{ getWeek(diary.date) }}</span>
@@ -46,11 +27,8 @@
             {{ diary.content }}
           </p>
         </div>
-
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -95,7 +73,6 @@ export default {
       this.$router.go(-1)
     },
     goToDetail (diary) {
-      // console.log('diary', diary)
       this.store.set('diaryFromMonth', diary)
       this.$router.push({
         name: 'detail'
@@ -110,7 +87,6 @@ export default {
       return this.weekTemplate[day]
     },
     debounceSearch: debounce (function () {
-      // console.log('this', this.value)
       let v = this.value
       let diaries = this.storage.load()
       let afterFilter = this.filterData(diaries, v)
@@ -118,8 +94,6 @@ export default {
     }, 500),
     filterData (diaries, search) {
       return diaries.filter(diary => {
-        // console.log('diary', diary)
-        // console.log('diary.content', diary.content)
         if (search === '') {
           return false
         } else {
@@ -133,16 +107,7 @@ export default {
 
 <style lang="stylus" scoped>
 .search
-  @media all
-    min-height 620px
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)
-    min-height 568px
-  @media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2)
-    min-height 667px
-  @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
-    min-height 812px
-  @media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3)
-    min-height 736px 
+  min-height 100vh
   background-color #fafafa
   .header
     position relative
