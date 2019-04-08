@@ -1,0 +1,54 @@
+@charset "utf-8";
+html {
+  background-color: #fff;
+  color: #000;
+}
+html {
+  overflow-x: hidden;
+  height: 100%;
+  font-size: 50px;
+  touch-action: manipulation;
+}
+body {
+  font-size: .28em;
+  height: 100%;
+}
+hr {
+  height: .02rem;
+  margin: .1rem 0;
+  border: medium none;
+  border-top: .02rem solid #cacaca;
+}
+
+/* 覆盖 cube-ui 的默认样式 */
+input {
+  outline: none;
+  border: 0;
+}
+
+/* 
+-- 减去 padding-top 安全值时的高度 --
+@media all
+  min-height 620px
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)
+  min-height 553px
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2)
+  min-height 653px
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
+  min-height 778px
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3)
+  min-height 723px 
+*/
+
+/* 
+@media all
+  
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (-webkit-device-pixel-ratio: 2)
+  
+@media only screen and (min-device-width: 375px)and (-webkit-min-device-pixel-ratio: 2)
+  
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3)
+  
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px) and (-webkit-device-pixel-ratio: 3)
+  
+*/
